@@ -41,7 +41,7 @@ class Validate_original():
         original_link = field.data
         if URLMap.query.filter_by(original=original_link).first() is not None:
             raise ValidationError(
-                    field.gettext(
-                        'Эта ссылка уже имеет сокращённую версию.'
-                    )
+                field.gettext(
+                    'Эта ссылка уже имеет сокращённую версию.'
                 )
+            )

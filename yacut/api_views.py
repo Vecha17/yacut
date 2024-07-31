@@ -44,9 +44,9 @@ def create_id():
     else:
         short_link = get_uniqгe_short_id()
     url = URLMap(
-            original=data['url'],
-            short=short_link
-        )
+        original=data['url'],
+        short=short_link
+    )
     db.session.add(url)
     db.session.commit()
     return jsonify(url.to_dict()), 201
