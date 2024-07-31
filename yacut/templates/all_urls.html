@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<main>
+      <ul>
+      {% for url in urls %}
+        <li class="nav-item">
+          <h5 class="text-left">
+            <a class="nav-link" href="{{ url.original }}">{{ url.original }}</a>
+            <a class="nav-link" href="http://127.0.0.1:5000/{{ url.short }}">http://127.0.0.1:5000/{{ url.short }}</a>
+          </h5>
+        </li>
+      {% endfor%}
+      </ul>
+</main>
+{% endblock %}
