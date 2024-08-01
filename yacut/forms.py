@@ -20,7 +20,11 @@ class URLForm(FlaskForm):
         'Ваш вариант короткой ссылки',
         validators=[
             Optional(),
-            Length(MIN_LENGTH, MAX_LENGTH_SHORT, 'Указано недопустимое имя для короткой ссылки'),
+            Length(
+                MIN_LENGTH,
+                MAX_LENGTH_SHORT,
+                'Указано недопустимое имя для короткой ссылки'
+            ),
             Validate_short()
         ]
     )

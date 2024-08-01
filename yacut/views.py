@@ -1,6 +1,6 @@
 import random
 
-from flask import abort, redirect, render_template
+from flask import redirect, render_template
 
 from yacut import app, db
 from yacut.forms import URLForm

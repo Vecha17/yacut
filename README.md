@@ -82,3 +82,11 @@ GET http://127.0.0.1:8000//api/id/{short_id}/
   "short_link": "string"
 }
 ```
+
+Технологии использованные в прокете:
+
+flask, sqlalchemy
+
+### Автор vechanka
+
+### tg: https://t.me/Vecha1337
