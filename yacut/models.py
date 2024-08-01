@@ -14,10 +14,10 @@ class URLMap(db.Model):
     )
 
     def to_dict(self):
-        return dict(
-            url=self.original,
-            short_link=f'http://localhost/{self.short}',
-        )
+        return {
+            'url': self.original,
+            'short_link': f'http://localhost/{self.short}',
+        }
 
     def to_dict_get_method(self):
         return dict(

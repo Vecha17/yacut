@@ -45,7 +45,5 @@ def all_urls():
 
 @app.route('/<string:short>')
 def short_url_view(short):
-    url = URLMap.query.filter_by(short=short).first()
-    if url:
-        return redirect(url.original)
-    return abort(404)
+    url = URLMap.query.filter_by(short=short).first_or_404()
+    return redirect(url.original)

@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, URLField, SubmitField
 from wtforms.validators import DataRequired, Length, Optional, URL
 
+from yacut.consts import MIN_LENGTH, MAX_LENGTH_ORIGINAL, MAX_LENGTH_SHORT
 from yacut.validators import Validate_short, Validate_original
 
 
@@ -10,7 +11,7 @@ class URLForm(FlaskForm):
         'Длинная сылка',
         validators=[
             DataRequired('Обязательное поле'),
-            Length(1, 256),
+            Length(MIN_LENGTH, MAX_LENGTH_ORIGINAL),
             URL(),
             Validate_original()
         ]
@@ -19,7 +20,7 @@ class URLForm(FlaskForm):
         'Ваш вариант короткой ссылки',
         validators=[
             Optional(),
-            Length(1, 16, 'Указано недопустимое имя для короткой ссылки'),
+            Length(MIN_LENGTH, MAX_LENGTH_SHORT, 'Указано недопустимое имя для короткой ссылки'),
             Validate_short()
         ]
     )
