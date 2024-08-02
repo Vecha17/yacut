@@ -20,6 +20,6 @@ class URLMap(db.Model):
         }
 
     def to_dict_get_method(self):
-        return dict(
-            url=self.original,
-        )
+        return {
+            'url': self.original,
+        }
